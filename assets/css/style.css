@@ -48,7 +48,7 @@ main {
 
 /* Hero Banner */
 .hero-banner {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/hero-banner.png') no-repeat center center/cover;
   color: white;
   padding: 120px 0;
   text-align: center;
