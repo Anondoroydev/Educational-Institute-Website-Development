@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 minute: '2-digit',
                 second: '2-digit'
             };
-            datetimeElement.textContent = now.toLocaleDateString('en-US', options);
+            datetimeElement.textContent = now.toLocaleString('en-US', options);
         };
         updateDateTime(); // Initial call
         setInterval(updateDateTime, 1000); // Update every second
