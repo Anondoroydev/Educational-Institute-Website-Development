@@ -1,84 +1,25 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Light Mode Variables */
-  --primary-color: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary-bg: #f8fafc;
-  --card-bg: #ffffff;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
-  --nav-bg: rgba(255, 255, 255, 0.8);
-  --border-color: #e2e8f0;
-  --accent-color: #f59e0b;
-  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --secondary-color: #f8f9fa;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
   --transition-speed: 0.3s;
-}
-
-[data-theme="dark"] {
-  /* Dark Mode Variables */
-  --primary-color: #818cf8;
-  --primary-hover: #6366f1;
-  --secondary-bg: #0f172a;
-  --card-bg: #1e293b;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --nav-bg: rgba(15, 23, 42, 0.8);
-  --border-color: #334155;
-  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.3);
-  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.5);
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--text-main);
-  background-color: var(--secondary-bg);
-  transition: background-color var(--transition-speed), color var(--transition-speed);
+  color: var(--text-dark);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 80px; /* Space for fixed navbar */
 }
 
 main {
   flex: 1;
-}
-
-/* Glassmorphic Navbar */
-.navbar {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background-color: var(--nav-bg) !important;
-  border-bottom: 1px solid var(--border-color);
-  transition: all var(--transition-speed);
-  padding: 1rem 0;
-}
-
-.navbar.scrolled {
-  padding: 0.7rem 0;
-  box-shadow: var(--shadow-md);
-}
-
-.navbar-brand {
-  color: var(--text-main) !important;
-  font-size: 1.5rem;
-}
-
-.navbar-nav .nav-link {
-  color: var(--text-main) !important;
-  font-weight: 500;
-  padding: 0.5rem 1.2rem !important;
-  transition: color var(--transition-speed);
-}
-
-.navbar-nav .nav-link.active {
-  color: var(--primary-color) !important;
-}
-
-.navbar-nav .nav-link:hover {
-  color: var(--primary-color) !important;
 }
 
 /* Navbar Hover Effect */
@@ -105,75 +46,41 @@ main {
   background: var(--primary-color);
 }
 
-/* Hero Carousel Styling */
-.carousel-img {
-  height: 600px;
+/* Simple Slider Style */
+.carousel {
+  margin-bottom: 50px; /* Gap below the slider */
+}
+
+.banner-img {
+  height: 650px;
   object-fit: cover;
-}
-
-.carousel-item {
-  position: relative;
-}
-
-/* Dark overlay for text readability */
-.carousel-item::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  filter: brightness(0.7) blur(2px); /* Taller height and clearer image */
 }
 
 .carousel-caption {
-  z-index: 10;
-  bottom: 25%;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
 }
 
-@media (max-width: 768px) {
-  .carousel-img {
-    height: 400px;
-  }
-  .carousel-caption {
-    bottom: 15%;
-  }
+.carousel-caption, 
+.carousel-caption h1, 
+.carousel-caption p,
+.carousel-caption * {
+  color: #ffffff !important;
+  text-shadow: none !important;
 }
 
-/* Cards Styling */
+/* Cards Hover effects */
 .card {
-  background-color: var(--card-bg);
-  color: var(--text-main);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
-}
-
-.card-title {
-  color: var(--text-main);
-}
-
-.card-text {
-  color: var(--text-muted);
-}
-
-.btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  transition: all var(--transition-speed);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-  border-color: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* Gallery Images */
@@ -181,13 +88,12 @@ main {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
   transition: transform var(--transition-speed);
 }
 .gallery-item {
   overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
 .gallery-item:hover .gallery-img {
   transform: scale(1.05);
@@ -235,12 +141,11 @@ main {
 }
 
 .faq-item {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
   margin-bottom: 15px;
   overflow: hidden;
-  transition: background-color var(--transition-speed);
 }
 
 .faq-question {
@@ -251,7 +156,6 @@ main {
   font-weight: 600;
   background: none;
   border: none;
-  color: var(--text-main);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -260,12 +164,11 @@ main {
 }
 
 .faq-question:hover {
-  background-color: rgba(99, 102, 241, 0.05);
+  background-color: #f8f9fa;
 }
 
 .faq-icon {
   transition: transform 0.3s ease;
-  color: var(--primary-color);
 }
 
 .faq-item.active .faq-icon {
@@ -282,121 +185,3 @@ main {
   padding: 0 20px 20px;
   color: var(--text-muted);
 }
-
-/* Director Message Section */
-.director-section {
-  background-color: var(--card-bg);
-  border-radius: 20px;
-  padding: 60px;
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-}
-
-.director-img-container {
-  position: relative;
-  display: inline-block;
-}
-
-.director-img-container::before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 100%;
-  height: 100%;
-  border: 4px solid var(--primary-color);
-  border-radius: 15px;
-  z-index: 0;
-  opacity: 0.3;
-}
-
-.director-img {
-  width: 100%;
-  max-width: 350px;
-  height: 450px;
-  object-fit: cover;
-  object-position: top; /* Ensures the head isn't cut off */
-  border-radius: 15px;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-
-.quote-icon {
-  font-size: 5rem;
-  color: var(--primary-color);
-  opacity: 0.1;
-  position: absolute;
-  top: 10px;
-  right: 30px;
-}
-
-.director-content {
-  padding-left: 30px;
-}
-
-/* Form Styling */
-.form-control {
-  background-color: var(--secondary-bg);
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-  transition: all var(--transition-speed);
-}
-
-.form-control:focus {
-  background-color: var(--card-bg);
-  color: var(--text-main);
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
-}
-
-.form-label {
-  color: var(--text-main);
-}
-
-/* Footer Styling */
-footer {
-  background-color: var(--card-bg);
-  color: var(--text-main);
-  border-top: 1px solid var(--border-color);
-  transition: background-color var(--transition-speed), color var(--transition-speed);
-}
-
-.footer-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-.director-signature {
-  font-family: 'Dancing Script', cursive; /* I should add this font or just use a nice serif */
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-  .director-section {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  .director-img {
-    height: 350px;
-    margin-bottom: 40px;
-  }
-  .director-content {
-    padding-left: 0;
-  }
-  .quote-icon {
-    display: none;
-  }
-}
-
