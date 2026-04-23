@@ -91,6 +91,7 @@ main {
   border-radius: 8px;
   transition: transform var(--transition-speed);
 }
+
 .gallery-item {
   overflow: hidden;
   border-radius: 8px;
