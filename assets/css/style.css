@@ -69,8 +69,7 @@ main {
 .carousel-caption * {
   color: #ffffff !important;
   text-shadow: none !important;
-}
-
+} 
 /* Cards Hover effects */
 .card {
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
@@ -95,8 +94,7 @@ main {
 .gallery-item {
   overflow: hidden;
   border-radius: 8px;
-}
-
+} 
 .gallery-item:hover .gallery-img {
   transform: scale(1.05);
 }
