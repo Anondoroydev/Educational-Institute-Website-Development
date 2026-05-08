@@ -18,7 +18,7 @@ questions.forEach(q => {
             if (other !== q) other.parentElement.classList.remove('active');
         });
     };
-});
+}); 
 
 // 3. Form Validation
 const contactForm = document.getElementById('contactForm');
@@ -34,7 +34,7 @@ if (contactForm) {
             const name = document.getElementById('name').value;
             alert("Thank you " + name + "! Your message has been sent."); 
             
-            this.reset(); // Clear form
+            this.reset(); 
             this.classList.remove('was-validated'); // Remove colors
         }
     };
